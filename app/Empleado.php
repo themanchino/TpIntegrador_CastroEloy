@@ -17,7 +17,7 @@ abstract class Empleado
         if (
             empty($nombre) || empty($apellido) || 
             empty($dni) || (int) $dni === 0 ||
-            empty($salario)
+            empty($salario) || !ctype_digit($dni)
         ) {
             throw new \Exception();
         }
