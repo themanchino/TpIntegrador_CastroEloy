@@ -19,15 +19,15 @@ class EmpleadoPermanenteTests extends \PHPUnit\Framework\TestCase
 
     public function testCalcularComision()
     {
-        $p = $this->crear(new DateTime('2020-10-10'));
+        $p = $this->crear(new DateTime('2021-10-10'));
         $this->assertEquals("1%", $p->calcularComision());
-        $p = $this->crear(new DateTime('2012-10-10'));
+        $p = $this->crear(new DateTime('2013-10-10'));
         $this->assertEquals("9%", $p->calcularComision());
     }
 
     public function testCalcularIngresoTotal()
     {
-        $p = $this->crear(new DateTime('2020-10-10'));
+        $p = $this->crear(new DateTime('2021-10-10'));
         // salario + (salario * antiguedad) / 100
         $this->assertEquals( 8000 + (8000*1) / 100, $p->calcularIngresoTotal());
 
@@ -35,10 +35,10 @@ class EmpleadoPermanenteTests extends \PHPUnit\Framework\TestCase
 
     public function testCalcularAntiguedad()
     {
-        $p = $this->crear(new DateTime('1998-10-10'));
+        $p = $this->crear(new DateTime('1999-10-10'));
         $this->assertEquals("23", $p->calcularAntiguedad());
         $p = $this->crear(new DateTime('2012-10-10'));
-        $this->assertEquals("9", $p->calcularAntiguedad());
+        $this->assertEquals("10", $p->calcularAntiguedad());
     }
 
     public function testObtenerFechaIngresoSinProporcionarla()
@@ -54,7 +54,7 @@ class EmpleadoPermanenteTests extends \PHPUnit\Framework\TestCase
     public function testConstructConFechaFutura()
     {
         $this->expectException(\Exception::class);
-        $p = $this->crear(new DateTime('2022-10-10'));
+        $p = $this->crear(new DateTime('2023-10-10'));
     }
 
 
