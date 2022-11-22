@@ -1,0 +1,15 @@
+{
+    "name": "castroeloy/tpintegrador",
+    "description": "trabajo practico integrador - ingenieria de software",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+
+    }
+}
